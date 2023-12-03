@@ -49,10 +49,15 @@ class SLL:
             self.start=self.start.next
             
     def delete_last(self):
-        temp = self.start
-        while temp.next.next is not None: #list must have atleast two nodes
-            temp = temp.next
-        temp.next=None        
+        if self.start = None: #empty list
+            pass
+        elif self.start.next is None: #one node only
+            self.start = None
+        else:
+            temp = self.start
+            while temp.next.next is not None: #list must have atleast two nodes
+                temp = temp.next
+            temp.next=None        
         
 
 #driver code
