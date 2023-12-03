@@ -58,7 +58,15 @@ class SLL:
             while temp.next.next is not None: #list must have atleast two nodes
                 temp = temp.next
             temp.next=None        
-        
+    
+    def delete_item(self,data):
+        if self.start is None:
+            pass
+        elif self.start.next is None: #one node
+            if self.start.item == data:
+                self.start = None
+        else: #atleast two nodes
+            temp=self.start
 
 #driver code
 mylist=SLL()
