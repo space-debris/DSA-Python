@@ -73,6 +73,8 @@ class SLL:
                 while temp.next is not None:
                    if temp.next.item == data:
                         temp.next = temp.next.next
+                        break # outta loop once we implement this,since this loop checks till end and we want to terminate it if it matches the cond
+                temp = temp.next
             
 
 #driver code
@@ -80,5 +82,10 @@ mylist=SLL()
 mylist.insert_at_start(20)
 mylist.insert_at_start(10)
 mylist.insert_at_last(30)
+mylist.insert_at_start(40)
+mylist.insert_at_start(50)
+mylist.insert_at_last(60)
 mylist.insert_after(mylist.search(20),25)
+mylist.delete_item(50)
+mylist.delete_item(60)
 mylist.print_list()
