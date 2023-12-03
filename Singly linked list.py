@@ -75,7 +75,26 @@ class SLL:
                         temp.next = temp.next.next
                         break # outta loop once we implement this,since this loop checks till end and we want to terminate it if it matches the cond
                 temp = temp.next
+    
+    def __iter__(self):
+        return SLLIterator(self.start)
             
+# for x in mylist ---> error since our class is not iterable
+# we are difining iterator, to make our class iterable we need to include a function in our class
+class SLLIterator:
+    def __init__(self,start):
+        self.current=start #current has node ref
+    def __iter__(self):
+        return self
+    # next method gets called repeatedly
+    def __next__(self):
+        if not self.current:
+            raise StopIteration
+        data=self.current.item
+        self.current=self.current.next
+        return data
+        
+
 
 #driver code
 mylist=SLL()
@@ -88,4 +107,5 @@ mylist.insert_at_last(60)
 mylist.insert_after(mylist.search(20),25)
 mylist.delete_item(50)
 mylist.delete_item(60)
-mylist.print_list()
+for x in mylist:
+    print(x,end=" ")
