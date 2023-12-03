@@ -83,7 +83,7 @@ class SLL:
 # we are difining iterator, to make our class iterable we need to include a function in our class
 class SLLIterator:
     def __init__(self,start):
-        self.current=start #current has node ref
+        self.current=start #for one by one access, current has node ref
     def __iter__(self):
         return self
     # next method gets called repeatedly
