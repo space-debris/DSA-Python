@@ -67,6 +67,13 @@ class SLL:
                 self.start = None
         else: #atleast two nodes
             temp=self.start
+            if temp.item == data: #what if we want to delte first node only, when temp points to that node, else we want temp to point to node previous to what we want to delte
+                self.start = temp.next
+            else:
+                while temp.next is not None:
+                   if temp.next.item == data:
+                        temp.next = temp.next.next
+            
 
 #driver code
 mylist=SLL()
