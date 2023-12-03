@@ -49,7 +49,7 @@ class SLL:
             self.start=self.start.next
             
     def delete_last(self):
-        if self.start = None: #empty list
+        if self.start is None : #empty list
             pass
         elif self.start.next is None: #one node only
             self.start = None
