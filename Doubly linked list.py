@@ -38,12 +38,12 @@ class DLL:
         
     def insertafter(self, temp, data):
         if temp is not None:
-            nn = Node(temp.prev, data, temp)
-            if temp.prev is not None:
-                temp.prev.next = nn
+            nn = Node(temp, data, temp.next)
+            if temp.next is not None:
+                temp.next.prev = nn
             else:
-                self.start = nn
-            temp.prev = nn
+                self.end = nn
+            temp.next = nn
         
     def printall(self):
         temp = self.start
