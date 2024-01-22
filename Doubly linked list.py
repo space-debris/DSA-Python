@@ -23,15 +23,30 @@ class DLL:
             while (temp.next != None):
                 temp=temp.next
             nn = Node(temp,data,None)
-            temp.next = nn
+        if temp == None:
+            self.start = nn
         else:
-            print("list is empty")
+            temp.next = nn
             
     def search(self,data):
-        if self.start != None:
-            temp = self.start
-            while data != temp.data:
-                temp=temp.next
-        else:
-            print("not found")
+        temp = self.start
+        while temp != None:
+            if temp.item == data:
+                return temp
+            temp = temp.next
+        return None
+    
+    def insertafter(self,temp,data):
+        if temp is not None:
+            nn = Node(temp,data,temp.next)
+            if temp.next is not None:
+                nn.next= temp.next.prev
+            temp.next = nn
+        
+    def printall(self):
+        temp = self.start
+        if temp is not None:
+            while temp is not None:
+                print(temp.item)
+                temp = temp.mext
      
