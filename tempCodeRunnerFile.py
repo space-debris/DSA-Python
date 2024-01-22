@@ -1,2 +1,2 @@
-mylist.delete_item(20)
-# mylist.delete_item(60)
+dll.insertafter(dll.search(52),72)
+# dll.insertafter(dll.search(25),32)
