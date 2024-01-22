@@ -19,7 +19,19 @@ class DLL:
         
     def insertatlast(self,data):
         temp = self.start
-        while (temp.next != None):
-            temp=temp.next
-        nn = Node(temp,data,None)
-        temp.next = nn
+        if self.start != None:
+            while (temp.next != None):
+                temp=temp.next
+            nn = Node(temp,data,None)
+            temp.next = nn
+        else:
+            print("list is empty")
+            
+    def search(self,data):
+        if self.start != None:
+            temp = self.start
+            while data != temp.data:
+                temp=temp.next
+        else:
+            print("not found")
+     
