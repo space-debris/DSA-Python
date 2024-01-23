@@ -26,4 +26,28 @@ class CLL:
             nn.next = self.last.next
             self.last.next = nn
             self.last = nn
+    def search(self,data):
+        if self.is_empty:
+            return None
+        temp=self.last.next
+        while temp != self.last:
+            if temp.item==data:
+                return temp
+            temp=temp.next
+        if temp.item == data:
+            return temp
+        return None
+    def insertafter(self,temp,data):
+        if temp is not None:
+            nn = Node(data,temp.next)
+            temp.next = nn
+            if temp==self.last:
+                self.last=nn
+    def printlist(self):
+        temp=self.last.next
+        while temp != self.last:
+            print(temp.item, end=" ")
+        print(temp.item,end="/n")
+        
+            
         
