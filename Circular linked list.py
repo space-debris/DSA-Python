@@ -49,7 +49,7 @@ class CLL:
             while temp != self.last:
                 print(temp.item, end=" ")
                 temp=temp.next
-            print(temp.item,end="/n")
+            print(temp.item,end="\n")
     def deletefirst(self):
         if not self.is_empty():
             if self.last == self.last.next:
@@ -85,8 +85,37 @@ class CLL:
                             temp.next=temp.next.next
                             break
                         temp=temp.next
-                    
+    def __iter__(self):
+        if self.last == None:
+            return CLLiterator(None)     
+        else:
+            return CLLiterator(self.last.next)           
             
+class CLLiterator:
+    def __init__(self,start):
+        self.current=start #object banate hue pehle node ka ref supply krna padega 
+        self.start=start
+        self.count = 0
+    def __iter__(self):
+        return self
+    def __next__(self):
+        if self.current == None:
+            raise StopIteration
+        if self.current == self.start and self.count==1: #wapas se pehle wale peagye yani, if ke baad vrna pehle hi stop
+            raise StopIteration
+        else:
+            self.count=1
+        data = self.current.item
+        self.current = self.current.next
+        return data
         
-            
+cll = CLL()
+cll.insertatstart(10)
+cll.insertatstart(20)
+cll.insertatlast(30)
+cll.insertatlast(40)
+cll.insertafter(cll.search(10),50)
+cll.printlist()
+for x in cll:
+    print(x,end=" ")
         
