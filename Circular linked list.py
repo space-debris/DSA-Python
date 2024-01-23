@@ -47,6 +47,7 @@ class CLL:
         temp=self.last.next
         while temp != self.last:
             print(temp.item, end=" ")
+            temp=temp.next
         print(temp.item,end="/n")
         
             
