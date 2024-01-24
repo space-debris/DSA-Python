@@ -1,2 +1,2 @@
-dll.insertafter(dll.search(52),72)
-# dll.insertafter(dll.search(25),32)
+if self.current==self.start and self.count ==1:
+        #     raise StopIteration

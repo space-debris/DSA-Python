@@ -63,7 +63,7 @@ class CDLL:
             while temp.next is not self.start:
                 print(temp.item,end=" ")
                 temp=temp.next
-            print(temp.item)
+            print(temp.item,end="\n")
     def deletefirst(self):
         if not self.isempty():
             if self.start.prev==self.start.next:
@@ -91,6 +91,40 @@ class CDLL:
                         temp.next.prev=temp.prev
                         break
                     temp=temp.next
+    def __iter__(self):
+        return CDLLIterator(self.start)
+
+class CDLLIterator:
+    def __init__(self,start):
+        self.current=start
+        self.count = 0
+        self.start=start
+    def __iter__(self):
+        return self
+    def __next__(self):
+        if self.current is None:
+            raise StopIteration
+        if self.current==self.start and self.count ==1:
+            raise StopIteration
+        else:
+            self.count = 1 #first iteration ko cross kr dia hai 
+        data=self.current.item
+        self.current=self.current.next
+        return data
+    
+mylist=CDLL()
+mylist.insertatstart(10)
+mylist.insertatlast(20)
+mylist.insertatlast(30)
+mylist.insertatlast(40)
+mylist.insertafter(mylist.search(30),34)
+mylist.insertafter(mylist.searchtest(34),38)
+mylist.printcdll()
+
+for x in mylist:
+    print(x,end=" ")
+        
+                    
                 
         
                 
