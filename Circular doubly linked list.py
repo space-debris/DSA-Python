@@ -71,6 +71,29 @@ class CDLL:
             else:
                 self.start.prev.next=self.start.next
                 self.start.next.prev=self.start.prev
+                self.start=self.start.next
+    def deletelast(self):
+        if not self.isempty():
+            if self.start.prev==self.start.next:
+                self.start=None
+            else:
+                self.start.prev.prev.next=self.start
+                self.start.prev=self.start.prev.prev
+    def deleteitem(self,data):
+        if not self.isempty():
+            if self.start.item==data:
+                self.deletefirst()
+            else:
+                temp=self.start.next
+                while temp is not self.start:
+                    if temp.item==data:
+                        temp.prev.next=temp.next
+                        temp.next.prev=temp.prev
+                        break
+                    temp=temp.next
+                
+        
+                
             
 
         
