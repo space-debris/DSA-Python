@@ -9,7 +9,15 @@ class Stack:
         if not self.is_empty():
             return self.items.pop()
         else:
-            raise IndexError()
-        
-        
+            raise IndexError("stack is empty")
+    def peek(self):
+        if not self.is_empty():
+            return self.item[-1]
+        else:
+            raise IndexError("stack is empty")
+    def size(self):
+        return len(self.items)
+    
+      
+    
     
