@@ -97,15 +97,15 @@ class SLLIterator:
 
 
 #driver code
-mylist=SLL()
-mylist.insert_at_start(20)
-mylist.insert_at_start(10)
-mylist.insert_at_last(30)
-mylist.insert_at_start(40)
-mylist.insert_at_start(50)
-mylist.insert_at_last(60)
-mylist.insert_after(mylist.search(20),25)
-mylist.delete_item(50)
-mylist.delete_item(60)
-for x in mylist:
-    print(x,end=" ")
+# mylist=SLL()
+# mylist.insert_at_start(20)
+# mylist.insert_at_start(10)
+# mylist.insert_at_last(30)
+# mylist.insert_at_start(40)
+# mylist.insert_at_start(50)
+# mylist.insert_at_last(60)
+# mylist.insert_after(mylist.search(20),25)
+# mylist.delete_item(50)
+# mylist.delete_item(60)
+# for x in mylist:
+#     print(x,end=" ")
