@@ -10,7 +10,7 @@ class Queue:
         self.item_count = 0
     
     def is_empty(self):
-        return self.item_count == 0
+        return self.front==None
     
     def enqueue(self,data):
         nn=Node(data)
@@ -25,9 +25,10 @@ class Queue:
         if self.is_empty():
             raise IndexError("Empty Queue")
         elif self.rear == self.front:
-            self.rear = self.rear = None
+            self.front = None
+            self.rear = None
         else:
-            self.rear = self.rear.next
+            self.front = self.front.next
         self.item_count -=1
     
     def get_front(self):
@@ -37,15 +38,24 @@ class Queue:
             raise IndexError("No data in the queue")
     
     def get_rear(self):
-        if not self.is_empty():
-            return self.rear.item
-        else:
+        if self.is_empty():
             raise IndexError("No data in the queue")
+        else:
+            return self.rear.item
+            
         
     def size(self):
         return self.item_count
     
 q = Queue()
+q.enqueue(10)
+q.enqueue(20)
+q.enqueue(30)
+print(q.get_front())
+print(q.get_rear())
+q.dequeue()
+print(q.get_front())
+print(q.get_rear())
 
     
             
