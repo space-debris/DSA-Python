@@ -2,10 +2,7 @@ from Singly_linked_list import *
 
 class Queue(SLL):
     def __init__(self):
-        super.__init__()
-        self.item_count = 0
-        # self.front = None
-        # self.rear = None
+        super().__init__()
     
     def is_empty(self):
         return super().is_empty()
@@ -22,7 +19,7 @@ class Queue(SLL):
         else:
             raise IndexError("queue is empty")
     
-    def get_last(self):
+    def get_rear(self):
         if not self.is_empty():
             temp = self.start
             while temp.next is not None:
@@ -30,4 +27,14 @@ class Queue(SLL):
             return temp.item
         else:
             raise IndexError("queue is empty")
+        
+q = Queue()
+q.enqueue(10)
+q.enqueue(20)
+q.enqueue(30)
+print(q.get_front())
+print(q.get_rear())
+q.dequeue()
+print(q.get_front())
+print(q.get_rear())
     
