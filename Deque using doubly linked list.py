@@ -53,4 +53,20 @@ class Deque:
         else:
             self.rear=self.rear.prev
             self.rear.next=None
+        self.item_count -=1
+        
+    def get_front(self):
+        if self.is_empty():
+            raise IndexError("deque is empty")
+        else:
+            return self.front.item
+    
+    def get_rear(self):
+        if self.is_empty():
+            raise IndexError("deque is empty")
+        else:
+            return self.rear.item
+    
+    def size(self):
+        return self.item_count
         

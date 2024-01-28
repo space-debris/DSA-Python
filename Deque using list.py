@@ -17,7 +17,7 @@ class Deque:
         else:
             raise IndexError("deque is empty")
     
-    def delte_rear(self):
+    def delete_rear(self):
         if not self.is_empty():
             self.items.pop()
         else:
