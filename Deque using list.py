@@ -40,4 +40,10 @@ class Deque:
             return len(self.items)
         else:
             raise IndexError("deque is empty")
-            
+
+d =Deque()
+d.insert_front(10)
+d.insert_front(20)
+d.insert_rear(30)
+d.insert_rear(40)
+print("rear is ", d.get_rear()," front is ",d.get_front())
