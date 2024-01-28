@@ -70,3 +70,9 @@ class Deque:
     def size(self):
         return self.item_count
         
+d = Deque()
+d.insert_front(10)
+d.insert_front(20)
+d.insert_rear(30)
+d.insert_rear(40)
+print("rear is ", d.get_rear()," front is ",d.get_front())
