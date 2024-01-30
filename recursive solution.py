@@ -3,11 +3,12 @@
 def naturalnumbers(n):
     if n>0:
         naturalnumbers(n-1)
-        print(n)
-#naturalnumbers(5)
+        print(n,end=" ")
+naturalnumbers(5)
+print()
 
 def naturalnumbersrev(n):
     if n>0:
-        print(n)
+        print(n,end=" " )
         naturalnumbersrev(n-1)
 naturalnumbersrev(5)
