@@ -22,4 +22,16 @@ def evennatunum(n):
     if n>0:
         evennatunum(n-1)
         print(2*n,end=" ")
-evennatunum(10)
+#evennatunum(10)
+
+def oddnatunumrev(n):
+    if n>0:
+        print(2*n-1,end=" ")
+        oddnatunumrev(n-1)
+#oddnatunumrev(10)
+
+def evennatunumrev(n):
+    if n>0:
+        print(2*n,end=" ")
+        evennatunumrev(n-1)
+evennatunumrev(10)
