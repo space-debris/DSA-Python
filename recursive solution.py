@@ -16,4 +16,10 @@ def oddnatunum(n):
     if n>0:
         oddnatunum(n-1)
         print(2*n-1,end=" ")
-oddnatunum(10)
+#oddnatunum(10)
+
+def evennatunum(n):
+    if n>0:
+        evennatunum(n-1)
+        print(2*n,end=" ")
+evennatunum(10)
