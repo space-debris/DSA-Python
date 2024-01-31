@@ -19,3 +19,16 @@ def sumofevennat(n):
 print(sumofevennat(10))
 
 # factorial
+def factorial(n):
+    if n==1 or n==0:
+        return 1 
+    else:
+        return n*factorial(n-1)
+print(factorial(5))
+
+def sumofsq(n):
+    if n==1:
+        return 1
+    else:
+        return n*n + sumofsq(n-1)
+print(sumofsq(5))
