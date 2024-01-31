@@ -42,8 +42,32 @@ class BST:
         return result
     
     def rinorder(self,root,result):
-        if root: #none ho jayega to false
+        if root: #true jb tk none nahi hai, none ho jayega to false
+            self.rinorder(root.left,result)
+            result.append(root.item)
+            self.rinorder(root.right,result)
         
+    def preorder(self):
+        result=[]
+        self.rpreorder(self.root,result)
+        return result
+    
+    def rpreorder(self,root,result):
+        if root:#true jb tk none nahi hai, none ho jayega to false
+            result.append(root.item)
+            self.rpreorder(root.left,result)
+            self.rpreorder(root.right,result)
+            
+    def postorder(self):
+        result=[]
+        self.rpostorder(self.root,result)
+        return result
+    
+    def rpostorder(self,root,result):
+        if root: #true jb tk none nahi hai, none ho jayega to false
+            result.append(root.item)
+            self.rpostorder(root.right,result)
+            self.rpostorder(root.left,result)
         
         
         
