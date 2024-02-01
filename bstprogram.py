@@ -88,9 +88,9 @@ class BST:
         if root is None:
             return root
         if data<root.item:
-            pass
+            root.left=self.rdelete(root.left,data)
         elif data>root.item:
-            pass
+            root.right=self.rdelete(root.right,data)
         
         
         
