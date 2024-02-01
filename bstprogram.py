@@ -69,5 +69,18 @@ class BST:
             self.rpostorder(root.right,result)
             self.rpostorder(root.left,result)
         
+    def minval(self,temp):
+        current = temp
+        while current.left is not None:
+            current = current.left
+        return current.item
+    
+    def maxval(self,temp):
+        current = temp
+        while current.right is not None:
+            current = current.right
+        return current.right
+    
+    
         
         
