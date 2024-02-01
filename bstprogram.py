@@ -82,7 +82,7 @@ class BST:
         return current.right
     
     def delete(self,data):
-        self.root=rdelete(self.root,data)
+        self.root=self.rdelete(self.root,data)
         
     def rdelete(self,root,data):
         if root is None:
@@ -91,6 +91,9 @@ class BST:
             root.left=self.rdelete(root.left,data)
         elif data>root.item:
             root.right=self.rdelete(root.right,data)
-        
+        else: #found the one we want to delete
+            #checking for conds
+            if root.left is None and root.right is None:
+                
         
         
