@@ -81,6 +81,16 @@ class BST:
             current = current.right
         return current.right
     
-    
+    def delete(self,data):
+        self.root=rdelete(self.root,data)
+        
+    def rdelete(self,root,data):
+        if root is None:
+            return root
+        if data<root.item:
+            pass
+        elif data>root.item:
+            pass
+        
         
         
