@@ -93,7 +93,13 @@ class BST:
             root.right=self.rdelete(root.right,data)
         else: #found the one we want to delete
             #checking for conds
-            if root.left is None and root.right is None:
+            if root.left is None:
+                return root.right
+            elif root.right is None:
+                return root.left
+            #replace by succ
+            root.item=self.min(root.right)
+            self.rdelete(root.right,root.item) 
                 
         
         
