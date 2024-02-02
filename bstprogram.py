@@ -11,6 +11,7 @@ class BST:
     def __init__(self):
         self.root=None
         
+        
     def insert(self,data):
         self.root= self.rinsert(self.root,data)
     
@@ -100,6 +101,7 @@ class BST:
             #replace by succ
             root.item=self.min(root.right)
             self.rdelete(root.right,root.item) 
-                
+        return root
         
-        
+    def size(self):
+       return len(self.inorder())
