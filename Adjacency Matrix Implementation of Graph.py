@@ -29,3 +29,11 @@ class Graph:
             # ["0", "1","0"...] join method of str class will " ".join(list) will join elements with space
             # 0 1 0 ..
             
+g = Graph(5)
+g.add_edge(0,1)
+g.add_edge(1,2)
+g.add_edge(1,3)
+g.add_edge(2,3)
+g.add_edge(3,4)
+
+g.print_adj_matrix()
