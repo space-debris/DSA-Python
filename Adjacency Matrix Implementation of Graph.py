@@ -23,4 +23,9 @@ class Graph:
         else:
             print("invald vertex")
             
+    def print_adj_matrix(self):
+        for row_list in self.adj_matrix:
+            print(" ".join(map(str,row_list))) # row_list [0 1 0 1 ...] all elements conv to str in strfun, map function will pass elements of list in str func str(0)->"0"
+            # ["0", "1","0"...] join method of str class will " ".join(list) will join elements with space
+            # 0 1 0 ..
             
