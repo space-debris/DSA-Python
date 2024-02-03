@@ -16,3 +16,11 @@ class Graph:
             self.adj_matrix[v][u]=0
         else:
             print("invald vertex")
+            
+    def has_edge(self,u,v):
+        if 0<=u<self.vertex_count and 0<=v<self.vertex_count:
+            return self.adj_matrix[u][v] != 0
+        else:
+            print("invald vertex")
+            
+            
