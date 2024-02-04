@@ -20,4 +20,11 @@ class Graph:
     def has_edge(self,u,v):
         if 0<=u<self.vertex_count and 0<=v<self.vertex_count:
             return any(vertex==v for vertex,x in self.adj_list[u])
-        
+        else:
+            print("invalid")
+            return False
+    
+    def print_adj_list(self):
+        for vertex,n in self.adj_list.items():
+            print("V",vertex,":",n)
+
