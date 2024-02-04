@@ -5,8 +5,8 @@ class Graph:
         
     def add_edge(self,u,v,weight=1):
         if 0<=u<self.vertex_count and 0<=v<self.vertex_count:
-            self.adj_list[u].append[(v,weight)]
-            self.adj_list[v].append[(u,weight)]
+            self.adj_list[u].append((v,weight))
+            self.adj_list[v].append((u,weight))
         else:
             print("invalid")
             
@@ -28,3 +28,11 @@ class Graph:
         for vertex,n in self.adj_list.items():
             print("V",vertex,":",n)
 
+g = Graph(5)
+g.add_edge(0,1)
+g.add_edge(1,2)
+g.add_edge(1,3)
+g.add_edge(2,4)
+g.add_edge(3,4)
+
+g.print_adj_list()
