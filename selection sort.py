@@ -9,3 +9,5 @@ def selection_sort(list1):
               list1[j]=temp
     return list1
   
+list1=[84,75,9,21,56,73,31,56,94]
+print(selection_sort(list1))
