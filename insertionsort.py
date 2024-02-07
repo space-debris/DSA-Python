@@ -1,10 +1,11 @@
 def insertionsort(mylist):
     for i in range(1,len(mylist)):
+        temp=mylist[i]
         m=i-1
-        while m>=0:
-            if mylist[m]<mylist[i]:
-                mylist[i],mylist[m]=mylist[m],mylist[i]
+        while m>=0 and temp<mylist[m]:
+            mylist[m+1]=mylist[m]
             m-=1
+        mylist[m+1]=temp
     
     return mylist
 
