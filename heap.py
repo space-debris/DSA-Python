@@ -1,3 +1,5 @@
+import math
+
 class Heap:
     
     def __init__(self):
@@ -9,7 +11,7 @@ class Heap:
     
     def insert(self,e):
         index=len(self.heap) # say 0-4 so 5th would be new index #adding at last
-        parent=(index-1)/2
+        parent=(index-1)//2
         while index>0 and self.heap[parent]<e:
             if index==len(self.heap):
                 self.heap.append(self.heap[parent])
@@ -17,7 +19,7 @@ class Heap:
                 self.heap[index]=self.heap[parent]
             
             index=parent
-            parent=(index-1)/2
+            parent=(index-1)//2
         
         if index==len(self.heap):
             self.heap.append(e)
@@ -80,3 +82,9 @@ class EmptyHeapException(Exception):
         self.msg=msg
     def __str__(self):
         return self.msg        
+    
+    
+list1=[45,84,78,96,32,14,46,56,69]
+h=Heap()
+list1=h.heapsort(list1)
+print(list1)
