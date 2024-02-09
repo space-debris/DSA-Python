@@ -64,7 +64,16 @@ class Heap:
             rightchildindex=2*index+2
         self.heap[index]=temp
         return max_val
-                
+    
+    def heapsort(self,list1):
+        self.createheap(list1)
+        list2=[]
+        try:
+            while True:
+                list2.insert(0,self.delete())
+        except EmptyHeapException:
+            pass
+        return list2
 
 class EmptyHeapException(Exception):
     def __init__(self,msg="empty heap"):
