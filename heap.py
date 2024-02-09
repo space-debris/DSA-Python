@@ -14,6 +14,13 @@ class Heap:
             if index==len(self.heap):
                 self.heap.append(self.heap[parent])
             else:
-                
+                self.heap[index]=self.heap[parent]
+            
+            index=parent
+            parent=(index-1)/2
         
+        if index==len(self.heap):
+            self.heap.append(e)
+        else:
+            self.heap[index]=e
         
