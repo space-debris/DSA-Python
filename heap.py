@@ -23,4 +23,14 @@ class Heap:
             self.heap.append(e)
         else:
             self.heap[index]=e
-        
+            
+    def top(self):
+        if len(self.heap)==0:
+            raise EmptyHeapException()
+        return self.heap[0]
+
+class EmptyHeapException(Exception):
+    def __init__(self,msg="empty heap"):
+        self.msg=msg
+    def __str__(self):
+        return self.msg        
