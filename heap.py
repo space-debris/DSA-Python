@@ -28,6 +28,43 @@ class Heap:
         if len(self.heap)==0:
             raise EmptyHeapException()
         return self.heap[0]
+    
+    def delete(self):
+        if len(self.heap)==0:
+            raise EmptyHeapException()
+        if len(self.heap)==1:
+            return self.heap.pop()
+        max_val=self.heap[0]
+        temp=self.heap.pop()
+        index=0
+        leftchildindex=2*index+1
+        rightchildindex=2*index+2
+        
+        while leftchildindex<len(self.heap):
+            if rightchildindex<len(self.heap):
+                if self.heap[leftchildindex]>self.heap[rightchildindex]:
+                    if self.heap[leftchildindex]>temp:
+                        self.heap[index]=self.heap[leftchildindex]
+                        index=leftchildindex
+                    else:
+                        break
+                else:
+                    if self.heap[rightchildindex]>temp:
+                        self.heap[index]=self.heap[rightchildindex]
+                        index=rightchildindex
+                    else:
+                        break
+            else: #no right child
+                if self.heap[leftchildindex]>temp:
+                    self.heap[index]=self.heap[leftchildindex]
+                    index=leftchildindex
+                else:
+                    break
+            leftchildindex=2*index+1
+            rightchildindex=2*index+2
+        self.heap[index]=temp
+        return max_val
+                
 
 class EmptyHeapException(Exception):
     def __init__(self,msg="empty heap"):
