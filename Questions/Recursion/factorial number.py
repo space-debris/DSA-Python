@@ -1,14 +1,12 @@
-def factorial(N):
-    if (N==0):
-        return 1
-    return N*factorial(N-1)
-        
 def factorialNumbers(N):
-    factorials=[]
-    for i in range(1,N+1):
-        fact= factorial(i)
-        if (fact <=N):
-            factorials.append(fact)
-    return factorials
+        factorials = []
+        fact = 1
+        for i in range(1, N+1):
+            fact *= i
+            if fact <= N:
+                factorials.append(fact)
+            else:
+                break
+        return factorials
  
 print(factorialNumbers(6))
